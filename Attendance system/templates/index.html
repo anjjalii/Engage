@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>ATTENDANCE SYSTEM</title>
+</head>
+<body style="background-color:#E6E6FA;">
+<h1 style="background-color:Dodgerblue;">......FACE RECOGNITION ATTENDANCE SYSTEM......</h1>
+<script>
+function myFunction1() {
+  document.getElementById("image").innerHTML =`<h3 class="mt-5">Live Streaming</h3><img  src="{{ url_for('video_feed') }}" width="100%">`;
+}
+function myFunction() {
+  document.getElementById("image").innerHTML = "STOPPED....PLEASE PRESS BUTTON START TO MARK YOUR TODAY'S ATTENDANCE!!!!!";
+}
+</script>
+
+<div class="container">
+    <div class="row"><button onclick="myFunction1()">start</button>
+        <div id="image" class="col-lg-8  offset-lg-2">
+            <h1 class="mt-5">SHOW YOUR FACE TO MARK YOUR ATTENDANCE!</h1>
+            <img  src="{{ url_for('video_feed') }}" width="100%">
+            <h4 class="mt-5">Press STOP BUTTON if your name appears on top.</h4>
+        </div>
+        <button onclick="myFunction()">stop</button>
+    </div>
+</div>
+</body>
+</html>
